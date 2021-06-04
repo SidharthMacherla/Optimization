@@ -140,7 +140,7 @@ def runExperiment(optMethod, noOfValues, cv):
 #&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
 # Iterate through all the individual files and create a master df
 #df=pd.read_csv(folderPath +"masterDf2.csv")
-pathToData = "C:/Users/tpf3706/Documents/"    
+pathToData = "<place the path to the working folder here>"    
 goodPath = (pathToData + '/data/good/*_2.edf')
 goodDocs = glob.glob(goodPath)
 
@@ -204,10 +204,6 @@ cv = RepeatedStratifiedKFold(n_splits=3, n_repeats=3, random_state=1)
 
 #Define list of gamma and C values
 noOfValues = [*range(105, 200, 5)]
-#noOfValues = [*range(10, 20, 5)]
-
-#Set up the grid for the search space
-#grid = [{'kernel': ['linear']}, {'kernel': ['rbf'], 'gamma': gammaValues, 'C': Cvalues}]
 
 #Define list of optimization methods to experiment
 optMethod = ['gridSearch', 'randomGridSearch', 'smbo']
